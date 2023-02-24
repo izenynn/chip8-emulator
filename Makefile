@@ -33,7 +33,7 @@ MAKE = make
 CXX = g++
 #CXX = clang++
 
-CXXFLAGS += -std=c++20 -Wall -Wextra -Werror -MD
+CXXFLAGS += -std=c++17 -Wall -Wextra -Werror -MD
 CXXFLAGS += -m64
 
 # **************************************************************************** #
