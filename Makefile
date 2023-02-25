@@ -58,6 +58,9 @@ CXXFLAGS += -I ./$(SRC_PATH)
 # **************************************************************************** #
 
 SRC_FILES =	main.cc					\
+			chip8.cc				\
+			engine.cc				\
+			window.cc				\
 
 OBJ_FILES = $(SRC_FILES:%.cc=%.o)
 DEP_FILES = $(SRC_FILES:%.cc=%.d)
@@ -70,18 +73,18 @@ DEP = $(addprefix $(OBJ_PATH)/, $(DEP_FILES))
 #                                     LIBS                                     #
 # **************************************************************************** #
 
+# SDL2
 SDL2_NAME = libSDL2.a
-SDL2_PATH = SDL2
-SDL = $(SDL2_PATH)/$(SDL2_NAME)
-CFLAGS += -I ./$(SDL2_PATH)/$(INC_PATH)
+SDL2MAIN_NAME = libSDL2main.a
+SDL2_PATH = $(LIB_PATH)/SDL2
+
+CXXFLAGS += -I ./$(SDL2_PATH)/include
 LDFLAGS += -L ./$(SDL2_PATH)
 
-SDL2MAIN_NAME = libSDL2main.a
-SDL2MAIN_PATH = SDL2
-CFLAGS += -I ./$(SDL2MAIN_PATH)/$(INC_PATH)
-LDFLAGS += -L ./$(SDL2MAIN_PATH)
+LDLIBS += -lSDL2 -lSDL2main
 
-LDLIBS = -lSDL2 -lSDL2main
+# SYSTEM LIBS
+LDLIBS += -ldl -lpthread
 
 # **************************************************************************** #
 #                                      OS                                      #
@@ -97,7 +100,6 @@ MKDIR = mkdir -p
 SLASH = /
 ifeq ($(UNAME_S),Linux)
 	CXXFLAGS += -D LINUX
-	LDLIBS += -lSDL2 -lSDL2main -lSDL2_image
 endif
 
 NAME := $(BIN_PATH)/$(BIN_NAME)

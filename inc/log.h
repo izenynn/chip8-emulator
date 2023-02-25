@@ -1,5 +1,5 @@
-#ifndef RPG_LOG_H_
-#define RPG_LOG_H_
+#ifndef EMU_LOG_H_
+#define EMU_LOG_H_
 
 /** INCLUDES ----------------------------------- */
 
@@ -7,8 +7,7 @@
 #include <string>
 #include <sstream>
 
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
+#include "SDL2/SDL.h"
 
 /** COLORS ------------------------------------- */
 
@@ -139,43 +138,36 @@ namespace emu {
 
 namespace log {
   inline void Info(const std::string& msg ) {
-    std::cout << "[" << C_BLUE << "*" << C_OFF << "] " << msg << std::endl;
+    std::cout << "[" << C_BLUE << "*" << C_OFF << "] " << msg << "\n";
     return;
   }
   inline void Success(const std::string& msg) {
-    std::cout << "[" << C_GREEN << "+" << C_OFF << "] " << msg << std::endl;
+    std::cout << "[" << C_GREEN << "+" << C_OFF << "] " << msg << "\n";
     return;
   }
   inline void Warning(const std::string& msg) {
-    std::cout << "[" << C_YELLOW << "!" << C_OFF << "] " << msg << std::endl;
+    std::cout << "[" << C_YELLOW << "!" << C_OFF << "] " << msg << "\n";
     return;
   }
   inline void Failure(const std::string& msg) {
-    std::cout << "[" << C_RED << "-" << C_OFF << "] " << msg << std::endl;
+    std::cout << "[" << C_RED << "-" << C_OFF << "] " << msg << "\n";
     return;
   }
   inline void Error(const std::string& msg) {
-    std::cerr << "[" << CBACK_RED_WHITE << "ERROR" << C_OFF << "] " << msg << std::endl;
+    std::cerr << "[" << CBACK_RED_WHITE << "ERROR" << C_OFF << "] " << msg << "\n";
     return;
   }
   inline void Debug(const std::string& msg) {
-    //std::clog << "[" << CBACK_YELLOW_BLACK << "DEBUG" << C_OFF << "] " << msg << std::endl;
-    std::clog << CBACK_YELLOW_BLACK << msg << C_OFF << std::endl;
+    std::clog << CBACK_YELLOW_BLACK << msg << C_OFF << "\n";
     return;
   }
   inline void SdlError(const std::string& msg) {
     std::cerr << "[" << CBACK_RED_WHITE << "ERROR" << C_OFF << "] " << msg
               << "\nSDL_Error: " << SDL_GetError()
-              << std::endl;
-  }
-  inline void SdlImgError(const std::string& msg) {
-    std::cerr << "[" << CBACK_RED_WHITE << "ERROR" << C_OFF << "] " << msg
-              << "\nSDL_Error: " << SDL_GetError()
-              << "\nIMG_Error: " << IMG_GetError()
-              << std::endl;
+              << "\n";
   }
 } // namespace log
 
 } // namespace emu
 
-#endif // RPG_LOG_H_
+#endif // EMU_LOG_H_
