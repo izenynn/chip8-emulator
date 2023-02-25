@@ -1,2 +1,2 @@
 # emulator
-Another GameBoy emulator
+Another Chip8 emulator
