@@ -84,7 +84,7 @@ Mkfile.old
 dkms.conf
 
 # Program name
-emulator
+emu
 
 # valgrind
 valgrind-out.txt

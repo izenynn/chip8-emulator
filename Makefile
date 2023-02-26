@@ -20,7 +20,7 @@ UNAME_S := $(shell uname -s)
 #                                   PROGRAM                                    #
 # **************************************************************************** #
 
-BIN_NAME = emulator
+BIN_NAME = emu
 
 INSTALL_PATH ?= /usr/local/bin
 
