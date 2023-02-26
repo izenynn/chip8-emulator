@@ -74,12 +74,12 @@ DEP = $(addprefix $(OBJ_PATH)/, $(DEP_FILES))
 # **************************************************************************** #
 
 # SDL2
-SDL2_NAME = libSDL2.a
-SDL2MAIN_NAME = libSDL2main.a
-SDL2_PATH = $(LIB_PATH)/SDL2
+#SDL2_NAME = libSDL2.a
+#SDL2MAIN_NAME = libSDL2main.a
+#SDL2_PATH = $(LIB_PATH)/SDL2
 
-CXXFLAGS += -I ./$(SDL2_PATH)/include
-LDFLAGS += -L ./$(SDL2_PATH)
+#CXXFLAGS += -I ./$(SDL2_PATH)/include
+#LDFLAGS += -L ./$(SDL2_PATH)
 
 LDLIBS += -lSDL2 -lSDL2main
 

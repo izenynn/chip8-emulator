@@ -4,8 +4,8 @@
 #include <string>
 #include <memory>
 
-#include "SDL2/SDL.h"
-#include "SDL2/SDL_pixels.h"
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_pixels.h>
 
 #include "window.h"
 #include "chip8.h"

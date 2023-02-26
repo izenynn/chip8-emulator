@@ -1,8 +1,6 @@
 #include <iostream>
 #include <memory>
 
-#include "SDL2/SDL.h"
-
 #include "emu.h"
 #include "engine.h"
 
