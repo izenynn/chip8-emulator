@@ -1,5 +1,6 @@
-# Emulator
-Another Chip8 emulator
+# Chip8 emulator
+
+Simple Chip8 emulator to learn the basics of emulation.
 
 ## Dependencies
 
