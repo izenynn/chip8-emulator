@@ -182,11 +182,11 @@ fclean: clean
 PHONY += re
 re: fclean all
 
-# RUM
+# RUN
 PHONY += run
 run: $(NAME)
 	@$(PRINTF) "\n${YEL}RUNNING...${NOCOL}\n"
-	$(NAME)
+	$(NAME) 10 ./roms/test_opcode.ch8
 	@$(PRINTF) "\n${GRN}SUCCESS!${NOCOL}\n"
 
 -include $(DEP)
